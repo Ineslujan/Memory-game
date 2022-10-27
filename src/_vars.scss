@@ -1,0 +1,8 @@
+@use 'sass:color';
+
+$border : 1px;
+$gap : 10px;
+$sizeGame : 700px;
+$colorDefault : rgb(255, 255, 255);
+$colorDefaultAlt : color.scale($colorDefault, $blackness : 10%);
+$sizeCard : calc(($sizeGame / 4) - (2 * $gap) - (2 * $border));

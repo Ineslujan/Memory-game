@@ -1,0 +1,69 @@
+{
+  "cards": [
+    {
+      "id": 0,
+      "name": "images/Chicobo.jpg"
+    },
+    {
+      "id": 1,
+      "name": "images/Chicobo.jpg"
+    },
+    {
+      "id": 2,
+      "name": "images/Edea.jpg"
+    },
+    {
+      "id": 3,
+      "name": "images/Edea.jpg"
+    },
+    {
+      "id": 4,
+      "name": "images/Nosferatu.jpg"
+    },
+    {
+      "id": 5,
+      "name": "images/Nosferatu.jpg"
+    },
+    {
+      "id": 6,
+      "name": "images/PampaSenior.jpg"
+    },
+    {
+      "id": 7,
+      "name": "images/PampaSenior.jpg"
+    },
+    {
+      "id": 8,
+      "name": "images/Phenix.jpg"
+    },
+    {
+      "id": 9,
+      "name": "images/Phenix.jpg"
+    },
+    {
+      "id": 10,
+      "name": "images/Quistis.jpg"
+    },
+    {
+      "id": 11,
+      "name": "images/Quistis.jpg"
+    },
+    {
+      "id": 12,
+      "name": "images/Seifer.jpg"
+    },
+    {
+      "id": 13,
+      "name": "images/Seifer.jpg"
+    },
+    {
+      "id": 14,
+      "name": "images/Tomberry.jpg"
+    },
+    {
+      "id": 15,
+      "name": "images/Tomberry.jpg"
+    }
+  ],
+  "backCard" : "images/back.png"
+}

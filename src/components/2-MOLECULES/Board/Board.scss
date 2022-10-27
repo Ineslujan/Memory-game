@@ -1,0 +1,6 @@
+@use "src/vars";
+
+.board {
+  height: vars.$sizeGame;
+  width: vars.$sizeGame;
+}
