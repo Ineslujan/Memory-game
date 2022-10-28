@@ -2,67 +2,99 @@
   "cards": [
     {
       "id": 0,
-      "name": "images/Chicobo.jpg"
+      "name": "images/Chicobo.jpg",
+      "flip": false,
+      "find": false
     },
     {
       "id": 1,
-      "name": "images/Chicobo.jpg"
+      "name": "images/Chicobo.jpg",
+      "flip": false,
+      "find": false
     },
     {
       "id": 2,
-      "name": "images/Edea.jpg"
+      "name": "images/Edea.jpg",
+      "flip": false,
+      "find": false
     },
     {
       "id": 3,
-      "name": "images/Edea.jpg"
+      "name": "images/Edea.jpg",
+      "flip": false,
+      "find": false
     },
     {
       "id": 4,
-      "name": "images/Nosferatu.jpg"
+      "name": "images/Nosferatu.jpg",
+      "flip": false,
+      "find": false
     },
     {
       "id": 5,
-      "name": "images/Nosferatu.jpg"
+      "name": "images/Nosferatu.jpg",
+      "flip": false,
+      "find": false
     },
     {
       "id": 6,
-      "name": "images/PampaSenior.jpg"
+      "name": "images/PampaSenior.jpg",
+      "flip": false,
+      "find": false
     },
     {
       "id": 7,
-      "name": "images/PampaSenior.jpg"
+      "name": "images/PampaSenior.jpg",
+      "flip": false,
+      "find": false
     },
     {
       "id": 8,
-      "name": "images/Phenix.jpg"
+      "name": "images/Phenix.jpg",
+      "flip": false,
+      "find": false
     },
     {
       "id": 9,
-      "name": "images/Phenix.jpg"
+      "name": "images/Phenix.jpg",
+      "flip": false,
+      "find": false
     },
     {
       "id": 10,
-      "name": "images/Quistis.jpg"
+      "name": "images/Quistis.jpg",
+      "flip": false,
+      "find": false
     },
     {
       "id": 11,
-      "name": "images/Quistis.jpg"
+      "name": "images/Quistis.jpg",
+      "flip": false,
+      "find": false
     },
     {
       "id": 12,
-      "name": "images/Seifer.jpg"
+      "name": "images/Seifer.jpg",
+      "flip": false,
+      "find": false
     },
     {
       "id": 13,
-      "name": "images/Seifer.jpg"
+      "name": "images/Seifer.jpg",
+      "flip": false,
+      "find": false
     },
     {
       "id": 14,
-      "name": "images/Tomberry.jpg"
+      "name": "images/Tomberry.jpg",
+      "flip": false,
+      "find": false
     },
     {
       "id": 15,
-      "name": "images/Tomberry.jpg"
+      "name": "images/Tomberry.jpg",
+      "flip": false,
+      "find": false
     }
   ],
   "backCard" : "images/back.png"

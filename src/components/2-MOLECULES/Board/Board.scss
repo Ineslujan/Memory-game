@@ -4,3 +4,7 @@
   height: vars.$sizeGame;
   width: vars.$sizeGame;
 }
+
+.board[data-active="no"] {
+  pointer-events: none;
+}
