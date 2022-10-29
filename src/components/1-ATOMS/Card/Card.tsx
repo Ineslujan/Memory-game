@@ -18,7 +18,6 @@ type Props = {
 };
 
 function Card({
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   cardName,
   cardId,
   cardFlip,

@@ -46,7 +46,11 @@ function Board() {
     if (firstCardSelected?.name === secondCardSelected?.name) {
       modifyFlipFindCard('find');
     } else {
-      modifyFlipFindCard('flip');
+      console.log('attention TIMER');
+      setTimeout(() => {
+        console.log('timer done');
+        modifyFlipFindCard('flip');
+      }, 800);
     }
   }
 
