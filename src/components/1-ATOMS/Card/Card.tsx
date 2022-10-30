@@ -40,7 +40,9 @@ function Card({
     if (!firstCardSelected) {
       setFirstCardSelected(findCard);
     } else {
-      setSecondCardSelected(findCard);
+      setTimeout(() => {
+        setSecondCardSelected(findCard);
+      }, 800);
     }
   };
   const card = (cardFlip && cardFind) || (cardFlip && !cardFind);

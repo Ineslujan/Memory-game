@@ -21,7 +21,7 @@ function Board() {
     setShuffledCards([...shuffledDatas]);
   }, []);
 
-  const modifyFlipFindCard = (flipOrFind : string) => {
+  const modifyFlipFindCard = (flipOrFind: string) => {
     if (flipOrFind === 'flip') {
       (firstCardSelected as CardType).flip = false;
       (secondCardSelected as CardType).flip = false;
@@ -46,11 +46,7 @@ function Board() {
     if (firstCardSelected?.name === secondCardSelected?.name) {
       modifyFlipFindCard('find');
     } else {
-      console.log('attention TIMER');
-      setTimeout(() => {
-        console.log('timer done');
-        modifyFlipFindCard('flip');
-      }, 800);
+      modifyFlipFindCard('flip');
     }
   }
 
