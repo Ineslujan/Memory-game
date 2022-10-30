@@ -1,9 +1,9 @@
 import React from 'react';
 import { CardType } from '../../../interfaces/Cards';
 
-import './Card.scss';
+import './card.scss';
 
-type Props = {
+type PropsType = {
   cardName: string,
   cardId: number,
   cardFlip: boolean,
@@ -30,7 +30,7 @@ function Card({
   setFirstCardSelected,
   setSecondCardSelected,
   setShuffledCards,
-}: Props) {
+}: PropsType) {
   const imageName = cardName.slice(7).split('.jpg')[0];
 
   const handleClick = () => {

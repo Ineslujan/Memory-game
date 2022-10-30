@@ -97,5 +97,9 @@
       "find": false
     }
   ],
-  "backCard" : "images/back.png"
+  "backCard" : "images/back.png",
+  "timer" : 120
 }
+
+
+

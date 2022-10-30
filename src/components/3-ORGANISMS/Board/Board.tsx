@@ -4,14 +4,26 @@ import data from '../../../datas/cards.json';
 import { CardType } from '../../../interfaces/Cards';
 import Card from '../../1-ATOMS/Card/Card';
 
-import './Board.scss';
+import './board.scss';
 
-function Board() {
+type PropsType = {
+  setPoints: React.Dispatch<React.SetStateAction<number>>,
+  points: number,
+  endGame: boolean
+};
+
+function Board({ setPoints, points, endGame }: PropsType) {
   const [shuffledCards, setShuffledCards] = useState<CardType[]>([]);
   const [firstCardSelected, setFirstCardSelected] = useState<CardType>();
   const [secondCardSelected, setSecondCardSelected] = useState<CardType>();
   const [lockBoard, setLockBoard] = useState<boolean>(false);
   const { backCard } = data;
+
+  useEffect(() => {
+    if (endGame) {
+      setLockBoard(true);
+    }
+  }, [endGame]);
 
   useEffect(() => {
     const dataToSort = [...data.cards];
@@ -29,6 +41,7 @@ function Board() {
     } else if (flipOrFind === 'find') {
       (firstCardSelected as CardType).find = true;
       (secondCardSelected as CardType).find = true;
+      setPoints(points + 1);
     }
 
     const firstAndSecond = [firstCardSelected, secondCardSelected];
@@ -42,15 +55,17 @@ function Board() {
     setLockBoard(false);
   };
 
-  if (firstCardSelected?.name && secondCardSelected?.name) {
-    console.log(firstCardSelected?.name, secondCardSelected?.name);
+  useEffect(() => {
+    if (firstCardSelected?.name && secondCardSelected?.name) {
+      console.log(firstCardSelected?.name, secondCardSelected?.name);
 
-    if (firstCardSelected?.name === secondCardSelected?.name) {
-      modifyFlipFindCard('find');
-    } else {
-      modifyFlipFindCard('flip');
+      if (firstCardSelected?.name === secondCardSelected?.name) {
+        modifyFlipFindCard('find');
+      } else {
+        modifyFlipFindCard('flip');
+      }
     }
-  }
+  }, [firstCardSelected, secondCardSelected]);
 
   return (
     <section className="board" data-lock={lockBoard ? 'yes' : 'no'}>

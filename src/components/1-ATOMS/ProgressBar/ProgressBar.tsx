@@ -1,20 +1,26 @@
 import React from 'react';
 
-import './ProgressBar.scss';
+import data from '../../../datas/cards.json';
+import './progressBar.scss';
 
 type PropsType = {
   second: number,
-  setSecond: React.Dispatch<React.SetStateAction<number>>
-
+  setSecond: React.Dispatch<React.SetStateAction<number>>,
+  endGame: boolean
 };
 
-function ProgressBar({ second, setSecond }:PropsType) {
-  const percentTime = (second * 100) / 120;
+function ProgressBar({ second, setSecond, endGame }: PropsType) {
+  const percentTime = (second * 100) / data.timer;
 
-  setTimeout(() => {
+  const timeOut = setTimeout(() => {
     const newSecond = second - 0.1;
+
     setSecond(newSecond);
   }, 100);
+
+  if (second <= 0 || endGame) {
+    clearTimeout(timeOut);
+  }
 
   return (
     <div className="time">
