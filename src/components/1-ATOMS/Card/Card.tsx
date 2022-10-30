@@ -11,6 +11,7 @@ type Props = {
   backCard: string,
   firstCardSelected: CardType | undefined,
   shuffledCards: CardType[],
+  setLockBoard: React.Dispatch<React.SetStateAction<boolean>>,
   setFirstCardSelected: React.Dispatch<React.SetStateAction<CardType | undefined>>,
   setSecondCardSelected: React.Dispatch<React.SetStateAction<CardType | undefined>>,
   setShuffledCards: React.Dispatch<React.SetStateAction<CardType[]>>
@@ -25,6 +26,7 @@ function Card({
   backCard,
   firstCardSelected,
   shuffledCards,
+  setLockBoard,
   setFirstCardSelected,
   setSecondCardSelected,
   setShuffledCards,
@@ -40,6 +42,7 @@ function Card({
     if (!firstCardSelected) {
       setFirstCardSelected(findCard);
     } else {
+      setLockBoard(true);
       setTimeout(() => {
         setSecondCardSelected(findCard);
       }, 800);

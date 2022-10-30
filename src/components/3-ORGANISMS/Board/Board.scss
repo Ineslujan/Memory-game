@@ -9,6 +9,6 @@
   gap: vars.$gap;
 }
 
-.board[data-active="no"] {
+.board[data-lock="yes"] {
   pointer-events: none;
 }

@@ -10,6 +10,7 @@ function Board() {
   const [shuffledCards, setShuffledCards] = useState<CardType[]>([]);
   const [firstCardSelected, setFirstCardSelected] = useState<CardType>();
   const [secondCardSelected, setSecondCardSelected] = useState<CardType>();
+  const [lockBoard, setLockBoard] = useState<boolean>(false);
   const { backCard } = data;
 
   useEffect(() => {
@@ -38,6 +39,7 @@ function Board() {
 
     setFirstCardSelected(undefined);
     setSecondCardSelected(undefined);
+    setLockBoard(false);
   };
 
   if (firstCardSelected?.name && secondCardSelected?.name) {
@@ -51,7 +53,7 @@ function Board() {
   }
 
   return (
-    <section className="board" data-active={secondCardSelected ? 'no' : 'yes'}>
+    <section className="board" data-lock={lockBoard ? 'yes' : 'no'}>
       {shuffledCards.map((card: CardType) => (
         <Card
           key={card.id}
@@ -62,6 +64,7 @@ function Board() {
           backCard={backCard}
           shuffledCards={shuffledCards}
           firstCardSelected={firstCardSelected}
+          setLockBoard={setLockBoard}
           setFirstCardSelected={setFirstCardSelected}
           setSecondCardSelected={setSecondCardSelected}
           setShuffledCards={setShuffledCards}
