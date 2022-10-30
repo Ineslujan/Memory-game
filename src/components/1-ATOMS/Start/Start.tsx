@@ -12,7 +12,7 @@ function Start({ setStartGame }:PropsType) {
   };
 
   return (
-    <button type="button" className="startButton" onClick={handleClick}>Start !</button>
+    <button type="button" className="startButton" onClick={handleClick}>Start</button>
   );
 }
 
