@@ -1,0 +1,15 @@
+@use "src/vars";
+
+.time {
+  position: relative;
+  height: vars.$gap;
+  width: vars.$sizeGame;
+  border: 1px solid orange;
+
+  &-remain {
+    position: absolute;
+    top: -1px;
+    height: vars.$gap;
+    background-color: orange;
+  }
+}

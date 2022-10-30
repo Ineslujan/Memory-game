@@ -3,6 +3,10 @@
 .board {
   height: vars.$sizeGame;
   width: vars.$sizeGame;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: vars.$gap;
 }
 
 .board[data-active="no"] {
