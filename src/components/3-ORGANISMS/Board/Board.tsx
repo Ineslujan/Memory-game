@@ -9,15 +9,29 @@ import './board.scss';
 type PropsType = {
   setPoints: React.Dispatch<React.SetStateAction<number>>,
   points: number,
-  endGame: boolean
+  endGame: boolean,
+  startGame: boolean
 };
 
-function Board({ setPoints, points, endGame }: PropsType) {
+function Board({
+  setPoints, points, endGame, startGame,
+}: PropsType) {
   const [shuffledCards, setShuffledCards] = useState<CardType[]>([]);
   const [firstCardSelected, setFirstCardSelected] = useState<CardType>();
   const [secondCardSelected, setSecondCardSelected] = useState<CardType>();
   const [lockBoard, setLockBoard] = useState<boolean>(false);
   const { backCard } = data;
+
+  const newBoard = () => {
+    console.log('dataaaaaaaa', data.cards);
+
+    const dataToSort = data.cards.map((event) => ({ ...event }));
+    const shuffledDatas = dataToSort.sort(() => Math.random() - 0.5);
+
+    console.log(shuffledDatas);
+
+    setShuffledCards([...shuffledDatas]);
+  };
 
   useEffect(() => {
     if (endGame) {
@@ -26,12 +40,18 @@ function Board({ setPoints, points, endGame }: PropsType) {
   }, [endGame]);
 
   useEffect(() => {
-    const dataToSort = [...data.cards];
-    const shuffledDatas = dataToSort.sort(() => Math.random() - 0.5);
+    if (startGame) {
+      newBoard();
+      setFirstCardSelected(undefined);
+      setSecondCardSelected(undefined);
+      setLockBoard(false);
+    }
+  }, [startGame]);
 
-    console.log(shuffledDatas);
+  useEffect(() => {
+    const dataToSort = data.cards.map((event) => ({ ...event }));
 
-    setShuffledCards([...shuffledDatas]);
+    setShuffledCards([...dataToSort]);
   }, []);
 
   const modifyFlipFindCard = (flipOrFind: string) => {

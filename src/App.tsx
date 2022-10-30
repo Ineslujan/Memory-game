@@ -11,21 +11,34 @@ import Home from './components/2-MOLECULES/Home/Home';
 function App() {
   const [second, setSecond] = useState<number>(data.timer);
   const [points, setPoints] = useState<number>(0);
-  const [endGame, setEndGame] = useState<boolean>(false);
+  const [endGame, setEndGame] = useState<boolean>(true);
+  const [startGame, setStartGame] = useState<boolean>(false);
 
   useEffect(() => {
     if (second <= 0 || points === 8) {
       console.log('app endgame');
 
       setEndGame(true);
+      setStartGame(false);
     }
   }, [second, points]);
 
+  useEffect(() => {
+    if (startGame) {
+      console.log('app start');
+      setPoints(0);
+      setSecond(data.timer);
+      setEndGame(false);
+    }
+  }, [startGame]);
+
   return (
     <main className="App">
-      {endGame && <EndGame points={points} />}
-      <Home />
-      <Board endGame={endGame} setPoints={setPoints} points={points} />
+      {(endGame && (points === 8 || second <= 0))
+        && <EndGame points={points} setStartGame={setStartGame} />}
+      {(endGame && points === 0 && second === data.timer)
+        && <Home setStartGame={setStartGame} />}
+      <Board endGame={endGame} startGame={startGame} setPoints={setPoints} points={points} />
       <ProgressBar endGame={endGame} second={second} setSecond={setSecond} />
     </main>
   );
