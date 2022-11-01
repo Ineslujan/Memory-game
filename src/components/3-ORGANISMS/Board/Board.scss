@@ -1,8 +1,9 @@
 @use "src/vars";
 
 .board {
-  height: vars.$sizeGame;
-  width: vars.$sizeGame;
+  height: vars.$sizeGrid;
+  width: vars.$sizeGrid;
+  max-width: vars.$sizeGrid;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

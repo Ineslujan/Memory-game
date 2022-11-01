@@ -3,13 +3,23 @@
 .time {
   position: relative;
   height: vars.$gap;
-  width: vars.$sizeGame;
+  width: vars.$sizeGrid;
   border: 1px solid orange;
 
   &-remain {
     position: absolute;
-    top: -1px;
-    height: vars.$gap;
+    height: 100%;
     background-color: orange;
   }
 }
+
+@media screen and (max-height: 740px) and (min-width: 740px) {
+  .time {
+    position: absolute;
+    transform: rotate(270deg);
+    left: 52%;
+  }
+}
+
+// Tests a mettre
+// barre de progression pour hauteurs faibles

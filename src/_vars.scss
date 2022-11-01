@@ -1,7 +1,9 @@
 @use 'sass:color';
 
-$gap : 20px;
-$sizeGame : 700px;
+$gap : min(2%, 20px);
+$mediaQueryWidth : 700px;
+$sizeGrid : min(100vmin, 700px);
+// $sizeApp : min(100vmin, calc(700px + 2 * $gap));
 $colorDefault : rgb(255, 255, 255);
 $colorDefaultAlt : color.scale($colorDefault, $blackness : 10%);
-$sizeCard : calc(($sizeGame / 4) - (3 * $gap / 4));
+$sizeCard : calc(($sizeGrid / 4) - (3 * $gap / 4));

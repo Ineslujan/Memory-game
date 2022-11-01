@@ -3,19 +3,59 @@
 .card {
   height: vars.$sizeCard;
   width: vars.$sizeCard;
-  background-color: vars.$colorDefault;
+  position: relative;
 
   &-img {
     height: 100%;
     width: 100%;
     transition: .2s ease-in-out;
   }
-
-  &-img:hover {
-    opacity: 0.5;
-  }
 }
 
+.card[data-flip="yes"],
 .card[data-find="yes"] {
   pointer-events: none;
+}
+
+.card[data-find="yes"]::after {
+  content: url(./check.svg);
+  color: green;
+  filter: drop-shadow(0 0 4px black);
+  z-index: 3;
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translate(50%, -50%);
+  width: 75%;
+  height: 75%;
+  animation: find 0.5s forwards;
+}
+
+@media (pointer: fine) {
+  .card-img:hover {
+    opacity: 0.5;
+  }
+
+}
+
+@keyframes find {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 100%;
+  }
+
+  50% {
+    opacity: 100%;
+  }
+
+  75% {
+    opacity: 100%;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }

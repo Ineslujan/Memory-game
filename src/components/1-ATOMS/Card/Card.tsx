@@ -51,7 +51,7 @@ function Card({
   const card = (cardFlip && cardFind) || (cardFlip && !cardFind);
 
   return (
-    <button type="button" className="card" data-find={card ? 'yes' : 'no'} onClick={handleClick}>
+    <button type="button" className="card" data-find={cardFind ? 'yes' : 'no'} data-flip={cardFlip ? 'yes' : 'no'} onClick={handleClick}>
       <img src={card ? cardName : backCard} alt={card ? `${imageName} card` : 'Back card'} className="card-img" data-name={card ? imageName : 'back'} />
     </button>
   );
