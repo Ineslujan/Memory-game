@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './app.scss';
-import ProgressBar from './components/1-ATOMS/ProgressBar/ProgressBar';
+import ProgressBar from '../../1-ATOMS/ProgressBar/ProgressBar';
 
-import data from './datas/cards.json';
+import data from '../../../datas/cards.json';
 
-import Board from './components/3-ORGANISMS/Board/Board';
-import EndGame from './components/2-MOLECULES/EndGame/EndGame';
-import Home from './components/2-MOLECULES/Home/Home';
+import Board from '../../3-ORGANISMS/Board/Board';
+import EndGame from '../../2-MOLECULES/EndGame/EndGame';
+import Home from '../../2-MOLECULES/Home/Home';
 
 function App() {
   const [second, setSecond] = useState<number>(data.timer);

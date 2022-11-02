@@ -1,6 +1,8 @@
+@use "src/vars";
+
 .message{
   font-size: 3rem;
-  color: white;
+  color: vars.$colorFont;
   text-transform: uppercase;
   letter-spacing: 3px;
 }

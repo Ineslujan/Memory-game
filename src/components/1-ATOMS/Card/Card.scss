@@ -19,7 +19,6 @@
 
 .card[data-find="yes"]::after {
   content: url(./check.svg);
-  color: green;
   filter: drop-shadow(0 0 4px black);
   z-index: 3;
   position: absolute;

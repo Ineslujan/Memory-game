@@ -1,5 +1,7 @@
+@use "src/vars";
+
 .instructions {
-  color: white;
+  color: vars.$colorFont;
   text-align: center;
 
   &-minutes {

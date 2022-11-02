@@ -4,12 +4,12 @@
   position: relative;
   height: vars.$gap;
   width: vars.$sizeGrid;
-  border: 1px solid orange;
+  border: 1px solid vars.$colorFirst;
 
   &-remain {
     position: absolute;
     height: 100%;
-    background-color: orange;
+    background-color: vars.$colorFirst;
   }
 }
 
@@ -20,6 +20,3 @@
     left: 52%;
   }
 }
-
-// Tests a mettre
-// barre de progression pour hauteurs faibles
