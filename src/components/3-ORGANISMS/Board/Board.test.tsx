@@ -15,6 +15,8 @@ describe('component: Board', () => {
     points={1}
     endGame={false}
     startGame
+    backCard="test"
+    cards={[]}
     // eslint-disable-next-line react/jsx-no-bind, @typescript-eslint/no-unused-vars
     setPoints={function (value: React.SetStateAction<number>): void {
       throw new Error('Function not implemented.');

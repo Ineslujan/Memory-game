@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import data from '../../../datas/cards.json';
+// import data from '../../../datas/cards.json';
 import { CardType } from '../../../interfaces/Cards';
 import Card from '../../1-ATOMS/Card/Card';
 
@@ -10,22 +10,24 @@ type PropsType = {
   setPoints: React.Dispatch<React.SetStateAction<number>>,
   points: number,
   endGame: boolean,
-  startGame: boolean
+  startGame: boolean,
+  backCard:string,
+  cards:CardType[]
 };
 
 function Board({
-  setPoints, points, endGame, startGame,
+  setPoints, points, endGame, startGame, backCard, cards,
 }: PropsType) {
   const [shuffledCards, setShuffledCards] = useState<CardType[]>([]);
   const [firstCardSelected, setFirstCardSelected] = useState<CardType>();
   const [secondCardSelected, setSecondCardSelected] = useState<CardType>();
   const [lockBoard, setLockBoard] = useState<boolean>(false);
-  const { backCard } = data;
+  // const { backCard } = data;
 
   const newBoard = () => {
-    console.log('dataaaaaaaa', data.cards);
+    console.log('dataaaaaaaa', cards);
 
-    const dataToSort = data.cards.map((event) => ({ ...event }));
+    const dataToSort = cards.map((event) => ({ ...event }));
     const shuffledDatas = dataToSort.sort(() => Math.random() - 0.5);
 
     console.log(shuffledDatas);
@@ -49,10 +51,10 @@ function Board({
   }, [startGame]);
 
   useEffect(() => {
-    const dataToSort = data.cards.map((event) => ({ ...event }));
+    const dataToSort = cards.map((event) => ({ ...event }));
 
     setShuffledCards([...dataToSort]);
-  }, []);
+  }, [cards]);
 
   const modifyFlipFindCard = (flipOrFind: string) => {
     if (flipOrFind === 'flip') {

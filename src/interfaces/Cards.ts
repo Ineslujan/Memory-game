@@ -4,3 +4,9 @@ export type CardType = {
   flip: boolean;
   find: boolean;
 };
+
+export type ObjectType = {
+  backCard: string,
+  cards: CardType[],
+  timer : number
+};

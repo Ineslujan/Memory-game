@@ -5,7 +5,7 @@ import Instructions from './Instructions';
 
 describe('component: Instructions', () => {
   test('is the instruction display minute ?', () => {
-    render(<Instructions />);
+    render(<Instructions second={1} />);
 
     expect(screen.getByText(/minute/i)).toBeInTheDocument();
   });
